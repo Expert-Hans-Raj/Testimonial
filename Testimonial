@@ -94,27 +94,27 @@
 "options": [
 {
 "value": "accent-1",
-"label": "t:sections.rich-text.settings.color_scheme.options__1.label"
+"label": "Accent 1"
 },
 {
 "value": "accent-2",
-"label": "t:sections.rich-text.settings.color_scheme.options__2.label"
+"label": "Accent 2"
 },
 {
 "value": "background-1",
-"label": "t:sections.rich-text.settings.color_scheme.options__3.label"
+"label": "Background 1"
 },
 {
 "value": "background-2",
-"label": "t:sections.rich-text.settings.color_scheme.options__4.label"
+"label": "Background 2"
 },
 {
 "value": "inverse",
-"label": "t:sections.rich-text.settings.color_scheme.options__5.label"
+"label": "Inverse"
 }
 ],
 "default": "background-1",
-"label": "t:sections.rich-text.settings.color_scheme.label"
+"label": "Background 1"
 },
 {
 "type": "checkbox",
@@ -136,13 +136,13 @@
 {
 "type": "text",
 "id": "heading",
-"default": "Talk about your Client",
+"default": "Ryan",
 "label": "Client Name"
 },
 {
 "type": "text",
 "id": "title",
-"default": "Allure Sleep Vape",
+"default": "Testimonial Title",
 "label": "Title"
 },
 {
@@ -157,23 +157,23 @@
 "options": [
 {
 "value": "h2",
-"label": "t:sections.rich-text.blocks.heading.settings.heading_size.options__1.label"
+"label": "Small"
 },
 {
 "value": "h1",
-"label": "t:sections.rich-text.blocks.heading.settings.heading_size.options__2.label"
+"label": "Medium"
 },
 {
 "value": "h0",
-"label": "t:sections.rich-text.blocks.heading.settings.heading_size.options__3.label"
+"label": "Large"
 }
 ],
 "default": "h1",
-"label": "t:sections.rich-text.blocks.heading.settings.heading_size.label"
+"label": "Heading font size"
 },{
 "type": "richtext",
 "id": "text",
-"default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+"default": "<p>A wounderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>",
 "label": "t:sections.rich-text.blocks.text.settings.text.label"
 },  
 {
@@ -228,9 +228,7 @@
           slidesToScroll: 1
         }
       }
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
+     
     ]
   });
 
@@ -239,11 +237,7 @@
 </script>
 <script>
 $(document).ready(function(){
-//   $(".readmore").click(function(){
-// var aa =   $(this).find(".full_content").html();
-// // $.fancybox.open('<div class="message"><h2>Hello!</h2><p>You are awesome!</p></div>');
 
-//   });
 $('.read-more').click(function(){
 var role = $(this).next('.full_content').clone().wrap('<div/>').parent().html();
     $.fancybox.open(role);
@@ -252,101 +246,3 @@ var role = $(this).next('.full_content').clone().wrap('<div/>').parent().html();
 });
 
 </script>
-
-<script>
-//   $(".readmore").on('click', function() {
-// alert(hello);
-//   //$.fancybox.open('<div class="message"><h2>Hello!</h2><p>You are awesome!</p></div>');
-
-// });
-  
-  
-
-</script>
-<style>
-/* testi */
-#shopify-section-template--15289427525831__164189431560bb9569 button.slick-next.slick-arrow {
-    font-size: 1px;
-margin-top: 0;
-    background: #0c0c0c;
-    padding: 14px 8px;
-    border-radius: 50%;
-}
-
-.predictive-search.predictive-search--header {
-    background: #fff !important;
-}
-
-#shopify-section-template--15289427525831__164189431560bb9569 button.slick-prev.slick-arrow {
-    font-size: 1px;
-    left: 0!important;
-    background: #0c0c0c;
-    padding: 14px 8px;
-    border-radius: 50%;
-}
-
-.readless_ {display: none;}
-
-
-span.badge.badge--bottom-left.color-inverse {
-    background-color: #fff;
-}
-.ratings li img {
-    width: 20px;
-}
-
-.ratings li {
-    display: inline-block;
-}
-
-ul.ratings {
- margin:0px;
-  padding:0px;
-}
-
-#shopify-section-template--15289427525831__164189431560bb9569  button.slick-prev.slick-arrow:after {
-    border-style: solid;
-    border-width: .1em .1em 0 0;
-    content: '';
-    display: inline-block;
-    height: 15px;
-    margin: 0 .2em;
-    font-size: 25px;
-    color: #fff;
-    position: relative;
-    transform: rotate(221deg);
-    vertical-align: middle;
-    width: 15px;
-}
-
-
-.coa_pdf a {
-    padding: 10px 25px;
-    color: #000000;
-    border: 1px solid #000000;
-}
-
-.tab-content-wrapper ul {
-    margin: 0;
-    padding: 0;
-}
-
-#shopify-section-template--15289427525831__164189431560bb9569 button.slick-next.slick-arrow:after {
-    border-style: solid;
-    border-width: .1em .1em 0 0;
-    content: '';
-    display: inline-block;
-    height: 15px;
-    margin: 0 .2em;
-    font-size: 25px;
-    color: #fff;
-    position: relative;
-    transform: rotate(45deg);
-    vertical-align: middle;
-    width: 15px;
-}
-#shopify-section-template--15289427525831__164189431560bb9569 ul.slick-dots {
-    display: none !important;
-}
-/* testi */
-</style>
