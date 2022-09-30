@@ -4,78 +4,88 @@
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'section-rich-text.css' | asset_url | stylesheet_tag }}</noscript>
 
-<div class="{% unless section.settings.full_width %}page-width{% endunless %}">
-  <div class="rich-text color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width{% endif %}">
-    <h2 class="heading" {{ section.shopify_attributes }}>{{ section.settings.heading | escape }}</h2>
-    <h2 class="subheading" {{ section.shopify_attributes }}>{{ section.settings.subheading | escape }}</h2>
- 
-    <div class="rich-text__blocks testimonial_slider">
-      {%- for block in section.blocks -%}
-      <div class="testimonial_items text-center">
-        {%if block.settings.title != blank %}
-        <h2 class="{{ block.settings.heading_size }} client_title" {{ block.shopify_attributes }}>{{ block.settings.title | escape }}</h2>
-        {% endif %}
-        <ul class="ratings" rating="{{ block.settings.rating }}Star">
-          {% if block.settings.rating == 5%}
-          <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
-          <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
-          <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
-          <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
-          <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
-          {% elsif block.settings.rating == 4%}
-          <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
-          <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
-          <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
-          <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
-          {% elsif block.settings.rating == 3%}
-          <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
-          <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
-          <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
-          {% elsif block.settings.rating == 2%}
-          <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
-          <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
-          {% elsif block.settings.rating == 1%}
-          <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
-          {% else %}
-         <li></li>
-          {% endif %}
-        </ul>
-        {%if block.settings.img != blank %}
-        <img src="{{ block.settings.img | img_url}}" alt="client image not found">
-        {% endif %}
-        
-        <div class="readmore_ rich-text__text rte" {{ block.shopify_attributes }}>
-          {{ block.settings.text | truncate : 250 }} 
-        </div>
-        <div class="single-vacancy" {{ block.shopify_attributes }}>
-      <div class="readmore_ rich-text__text rte" {{ block.shopify_attributes }}>
-     <span class="read-more">Read More</span>
-      <div class="full_content" style="display:none;">
-          {{block.settings.text }}
-          </div>
-</div>
-        </div>
-        {%comment%}
-        
-         <div class="full_content" style="display:none;">
-          {{block.settings.text }}
-        </div>  {%endcomment%}
-        {%if block.settings.heading != blank %}
-        <h2 class="{{ block.settings.heading_size }} client_Name" {{ block.shopify_attributes }}>{{ block.settings.heading | escape }}</h2>
-        {% endif %}
+<div  class="{% unless section.settings.full_width %}page-width{% endunless %}">
+<div style="background-image: url('{{ section.settings.bgimage | img_url : "original" }}');" class="rich-text color-{{ section.settings.color_scheme }} {% if section.settings.full_width %} rich-text--full-width{% endif %}">
+  {% if section.settings.heading != blank %}
+  <h2 class="heading" {{ section.shopify_attributes }}>{{ section.settings.heading | escape }}</h2>
+  {% endif %}
+  {% if section.settings.subheading != blank %}
+  <h2 class="subheading" {{ section.shopify_attributes }}>{{ section.settings.subheading | escape }}</h2>
+{% endif %}
+  <div class="rich-text__blocks testimonial_slider">
+    {%- for block in section.blocks -%}
+    <div class="testimonial_items text-center">
+      <div class="profile_img">
+        <div class="client-img">
 
+{%if block.settings.img != blank %}
+      <img class="profile_img" src="{{ block.settings.img | img_url}}" alt="client image not found">
+      {% endif %}
+      
+        </div>
+    <div class="client-name">
+       {%if block.settings.title != blank %}
+      <h2 class="client-name {{ block.settings.heading_size }} client_title" {{ block.shopify_attributes }}>{{ block.settings.heading | escape }}</h2>
+      {% endif %}
+       <ul class="ratings" rating="{{ block.settings.rating }}Star">
+        {% if block.settings.rating == 5%}
+        <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
+        {% elsif block.settings.rating == 4%}
+        <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
+        {% elsif block.settings.rating == 3%}
+        <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
+        {% elsif block.settings.rating == 2%}
+        <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
+        <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
+        {% elsif block.settings.rating == 1%}
+        <li><img src="https://cdn.shopify.com/s/files/1/0595/1006/3303/files/star_2.png?v=1641898652"></li>
+        {% else %}
+       <li></li>
+        {% endif %}
+      </ul>
       </div>
-      {%- endfor -%}
+      </div>
+      <div class="text_info">
+      {%if block.settings.title != blank %}
+      <h2 class="{{ block.settings.heading_size }} client_title" {{ block.shopify_attributes }}>{{ block.settings.title | escape }}</h2>
+      {% endif %}
+      <div class="readmore_ rich-text__text rte" {{ block.shopify_attributes }}>
+        {{ block.settings.text }} 
+      </div> 
+      </div>
+      <div class="client_name">
+    {%if block.settings.heading != blank %}
+      <h2 class="client-name {{ block.settings.heading_size }} client_title" {{ block.shopify_attributes }}>{{ block.settings.heading | escape }}</h2>
+      {% endif %}  
+      </div>
     </div>
+     {%- endfor -%}
+  
+
+    </div>
+   
   </div>
 </div>
-
 {% schema %}
 {
 "name": "Testimonial",
 "tag": "section",
-"class": "spaced-section spaced-section--full-width",
+"class": "testimonial spaced-section spaced-section--full-width",
 "settings": [
+  {
+    "type":"image_picker",
+    "id":"bgimage",
+    "label":"Add Background Image"
+  },
 {
 "type":"text",
 "id":"heading",
@@ -180,7 +190,7 @@
 "type": "checkbox",
 "id": "button_style_secondary",
 "default": false,
-"label": "t:sections.rich-text.blocks.button.settings.button_style_secondary.label"
+"label": "Use outline button style"
 }
 ]
 }
@@ -194,55 +204,4 @@
 ]
 }
 {% endschema %}
-<script>
 
-  $('.testimonial_slider').slick({
-    dots: true,
-    arrows: true,
-    infinite: false,
-    speed: 300,
-    slidesToShow:1,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-          arrows: true,
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-     
-    ]
-  });
-
-
-
-</script>
-<script>
-$(document).ready(function(){
-
-$('.read-more').click(function(){
-var role = $(this).next('.full_content').clone().wrap('<div/>').parent().html();
-    $.fancybox.open(role);
-});
-  
-});
-
-</script>
