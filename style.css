@@ -1,0 +1,152 @@
+/* Testimonial page css start here */
+.rich-text__blocks.testimonial_slider {
+    margin: 0 auto;
+}
+.testimonial .rich-text {
+    margin: 0!important;
+    padding-bottom: 8rem;
+    padding-top: 4rem;
+    background-repeat: no-repeat;
+    width: 100% !important;
+    background-position: center;
+    background-size: cover !important;
+}
+.rich-text 
+ h2.heading {
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    font-size: 50px;
+    letter-spacing: 0px;
+    font-family: Lato;
+    font-weight: 700;
+}
+h2.h1.client_title {
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    font-size: 35px;
+    font-family: Lato;
+    font-weight: 700;
+    margin-bottom: 0!important;
+    margin-top: 18px;
+    padding-bottom: 10px;
+}
+
+.rich-text ul.slick-dots {
+    display: none !important;
+}
+.rich-text button.slick-prev.slick-arrow:after {
+    position: absolute;
+    content: "\f105";
+    font-family: FontAwesome;
+    font-size: 30px;
+    top: 12%;
+    cursor: pointer;
+    z-index: 2;
+    left: 10px;
+}
+.rich-text button.slick-prev.slick-arrow {
+    position: absolute;
+    right: 0;
+    top: 20%;
+    background: transparent;
+    font-size: 0px;
+    border: 0;
+}
+.rich-text button.slick-next.slick-arrow:after {
+    position: absolute;
+    content: "\f104";
+    font-family: FontAwesome;
+    font-size: 30px;
+    top: 50%;
+    cursor: pointer;
+    z-index: 2;
+    left: -40px;
+}
+.rich-text button.slick-next.slick-arrow {
+    position: absolute;
+    left: 0;
+    top: 11%;
+    background: transparent;
+    font-size: 0px;
+    border: 0;
+}
+.rich-text__blocks ul.ratings li {
+    list-style: none;
+}
+.rich-text__blocks ul.ratings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rich-text__blocks ul.ratings img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+.readmore_.rich-text__text.rte p {
+    font-size: 21px;
+    letter-spacing: 0px;
+    line-height: 31px;
+    text-align: center;
+    color: #000;
+    font-family: 'Nunito';
+    font-weight: 400;
+}
+.insta-section {
+    background: #202528;
+}
+h3.main_heading.insta-one {
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    font-size: 50px;
+    letter-spacing: 0px;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: bold;
+    margin-bottom: 10px!important;
+    font-family: 'Epilogue';
+}
+h3.main_heading.insta-two a {
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    font-size: 21px;
+    letter-spacing: 0px;
+    color: #fff;
+    text-transform: capitalize;
+    font-family: 'Nunito';
+    font-weight: 500;
+    text-decoration: none;
+}
+h3.main_heading.insta-two {
+    margin: 0px !important;
+}
+.rich-text {
+    margin-bottom: 5rem !important;
+}
+.profile_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img.profile_img {
+    border-radius: 100% !important;
+    object-fit: cover;
+}
+h2.client-name.h1.client_title {
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    font-size: 30px;
+    font-family: 'Epilogue';
+    font-weight: 500;
+    margin-bottom: 0!important;
+    margin-top: 20px;
+}
+.profile_img ul.ratings {
+    margin-top: 0px !important;
+}
+/* End here */
